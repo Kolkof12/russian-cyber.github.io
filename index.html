@@ -1,45 +1,64 @@
-
-</div>
-  </section>  <!-- Tools -->  <section id="tools">
-    <h2>صف الأدوات (تعريفي)</h2>
-    <div class="grid">
-      <div class="card"><h3>ماسحات</h3><p class="muted">ما هي؟ متى تُستخدم؟ أمثلة آمنة.</p><div class="imgph"></div></div>
-      <div class="card"><h3>مراقبة</h3><p class="muted">جمع السجلات والتحليل.</p><div class="imgph"></div></div>
-      <div class="card"><h3>تقوية الأنظمة</h3><p class="muted">Hardening & Best Practices.</p><div class="imgph"></div></div>
-    </div>
-  </section>  <!-- Programming -->  <section id="prog">
-    <h2>البرمجة</h2>
-    <div class="grid">
-      <div class="card"><h3>Python</h3><p class="muted">أتمتة دفاعية، تحليل نصوص.</p></div>
-      <div class="card"><h3>JavaScript</h3><p class="muted">واجهات، تحقق إدخال.</p></div>
-      <div class="card"><h3>Web Basics</h3><p class="muted">HTML/CSS وأمن الويب.</p></div>
-    </div>
-  </section>  <!-- Linux -->  <section id="linux">
-    <h2>كالي & آرتش (تعليمي)</h2>
-    <div class="grid">
-      <div class="card"><h3>المفاهيم</h3><p class="muted">إدارة الحزم، النظام، الصلاحيات.</p></div>
-      <div class="card"><h3>بيئات افتراضية</h3><p class="muted">مختبرات محاكاة آمنة.</p></div>
-      <div class="card"><h3>أفضل الممارسات</h3><p class="muted">أمن المستخدم والنظام.</p></div>
-    </div>
-  </section>
-</main><footer>
-  <div class="wrap">
-    <p>© 2026 جميع الحقوق محفوظة</p>
-    <p>المطور: <b>Russi</b></p>
-    <p>Instagram: <a href="https://instagram.com/wxl_services" target="_blank">@wxl_services</a> | Telegram: <a href="https://t.me/wxl_e" target="_blank">wxl_e</a></p>
+<section id="programming">
+  <h2>البرمجة</h2>
+  <div class="grid">
+    <div class="card"><h3>Python</h3><p class="muted">أتمتة دفاعية، تحليل نصوص.</p></div>
+    <div class="card"><h3>JavaScript</h3><p class="muted">واجهات، تحقق إدخال.</p></div>
+    <div class="card"><h3>HTML/CSS</h3><p class="muted">أساسيات أمن الويب.</p></div>
   </div>
-</footer><script>
-  // قاعدة تعريفات تعليمية (آمنة)
-  const defs = {
-    firewall:{title:'Firewall', text:'جدار ناري يراقب ويُرشّح حركة الشبكة وفق قواعد. مثال: منع منافذ غير مستخدمة.'},
-    encryption:{title:'Encryption', text:'تشفير البيانات لحمايتها. مثال: HTTPS يحمي البيانات أثناء النقل.'},
-    authentication:{title:'Authentication', text:'التحقق من الهوية. مثال: كلمات المرور + 2FA.'}
-  };
-  function lookup(){
-    const k = document.getElementById('termInput').value.toLowerCase();
-    const box = document.getElementById('result');
-    if(defs[k]) box.innerHTML = <h3>${defs[k].title}</h3><p>${defs[k].text}</p>;
-    else box.innerHTML = '<p class="muted">مصطلح غير موجود حالياً — سيتم إضافته قريباً.</p>';
-  }
-</script></body>
+</section>
+
+<section id="linux">
+  <h2>كالي & آرتش (تعليمي)</h2>
+  <div class="grid">
+    <div class="card"><h3>المفاهيم</h3><p class="muted">إدارة الحزم، النظام، الصلاحيات.</p></div>
+    <div class="card"><h3>بيئات افتراضية</h3><p class="muted">مختبرات محاكاة آمنة.</p></div>
+    <div class="card"><h3>أفضل الممارسات</h3><p class="muted">أمن المستخدم والنظام.</p></div>
+  </div>
+</section>
+
+<section id="login">
+  <h2>Login تعليمي</h2>
+  <div class="login-card">
+    <input type="text" placeholder="اسم المستخدم" id="loginUser">
+    <input type="password" placeholder="كلمة المرور" id="loginPass">
+    <button onclick="doLogin()">تسجيل الدخول</button>
+    <p class="muted" id="loginMsg"></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+  <p>المطور: <b>Russi</b></p>
+  <p>Instagram: <a href="https://instagram.com/wxl_services" target="_blank">@wxl_services</a> | Telegram: <a href="https://t.me/wxl_e" target="_blank">wxl_e</a></p>
+</footer>
+
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  html.dataset.theme = html.dataset.theme==="dark"?"light":"dark";
+}
+function setLang(l){alert("Language change: "+l+" (تعليمي فقط)");}
+const defs={
+  firewall:{title:'Firewall', text:'جدار ناري يراقب حركة الشبكة وفق قواعد. مثال: منع منافذ غير مستخدمة.'},
+  encryption:{title:'Encryption', text:'تشفير البيانات لحمايتها. مثال: HTTPS.'},
+  authentication:{title:'Authentication', text:'التحقق من الهوية، كلمات مرور + 2FA.'}
+};
+function lookup(){
+  const k=document.getElementById('termInput').value.toLowerCase();
+  const box=document.getElementById('result');
+  if(defs[k]) box.innerHTML=<h3>${defs[k].title}</h3><p>${defs[k].text}</p>;
+  else box.innerHTML='<p class="muted">مصطلح غير موجود حالياً — سيتم إضافته قريباً.</p>';
+}
+function doLogin(){
+  const u=document.getElementById('loginUser').value;
+  const p=document.getElementById('loginPass').value;
+  const msg=document.getElementById('loginMsg');
+  if(u==="test"&&p==="1234") msg.innerHTML="✅ تسجيل دخول ناجح (تعليمي فقط)";
+  else msg.innerHTML="❌ اسم مستخدم أو كلمة مرور غير صحيحة (تعليمي)";
+}
+</script>
+
+</body>
 </html>
