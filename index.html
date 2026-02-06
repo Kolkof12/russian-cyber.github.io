@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Russian Cyber</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg:#0a0a0a; --card:#141414; --text:#ffffff; --muted:#aaaaaa;
+    }
+    [data-theme="light"]{
+      --bg:#ffffff; --card:#f1f1f1; --text:#000000; --muted:#555;
+    }
+    body{
+      margin:0;font-family:system-ui;background:var(--bg);color:var(--text);
+      transition:.3s;
+    }
+    header,footer{padding:16px;border-bottom:1px solid #333}
+    footer{border-top:1px solid #333;text-align:center}
+    .wrap{max-width:1100px;margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--muted);text-decoration:none;margin:0 8px}
+    nav a:hover{color:var(--text)}
+    button,select{
+      background:var(--card);color:var(--text);
+      border:1px solid #444;border-radius:8px;padding:6px 10px
+    }
+    section{padding:40px 16px}
+    h1,h2{margin-top:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid #333}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <strong>Russian Cyber</strong>
+      <div>
+        <a href="#cyber">الأمن السبراني</a>
+        <a href="#ethical">الهكر الأخلاقي</a>
+        <a href="#vuln">ثغرات معروفة</a>
+        <a href="#code">البرمجة</a>
+      </div>
+      <div>
+        <button onclick="toggleTheme()">🌓</button>
+        <select>
+          <option>AR</option>
+          <option>EN</option>
+          <option>RU</option>
+        </select>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap">
+  <h1>منصة تعليمية في الأمن السبراني</h1>
+  <p class="muted">
+    محتوى احترافي، أخلاقي، وتعليمي.  
+    الفهم قبل الاختراق، والحماية قبل كل شيء.
+  </p>
+</section>
+
+<section id="cyber" class="wrap">
+  <h2>الأمن السبراني</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>ما هو الأمن السبراني؟</h3>
+      <p class="muted">حماية الأنظمة، الشبكات، والبيانات من التهديدات الرقمية.</p>
+    </div>
+    <div class="card">
+      <h3>أنواع الهجمات</h3>
+      <p class="muted">Phishing، Malware، DDoS (شرح نظري فقط).</p>
+    </div>
+  </div>
+</section>
+
+<section id="ethical" class="wrap">
+  <h2>الهكر الأخلاقي</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>ما هو؟</h3>
+      <p class="muted">اختبار أمني يتم بإذن قانوني لتحسين الحماية.</p>
+    </div>
+    <div class="card">
+      <h3>الفرق عن الاختراق</h3>
+      <p class="muted">الهكر الأخلاقي يحمي، الاختراق الإجرامي يدمّر.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vuln" class="wrap">
+  <h2>ثغرات معروفة (تعليمي)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>SQL Injection</h3>
+      <p class="muted">
+        إدخال بيانات غير محمية قد يغيّر سلوك قاعدة البيانات.<br>
+        <b>الحل:</b> Prepared Statements.
+      </p>
+    </div>
+    <div class="card">
+      <h3>XSS</h3>
+      <p class="muted">
+        حقن كود في صفحات الويب.<br>
+        <b>الحل:</b> Sanitization + CSP.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Weak Passwords</h3>
+      <p class="muted">
+        كلمات مرور ضعيفة أو مكررة.<br>
+        <b>الحل:</b> Hashing + MFA.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="code" class="wrap">
+  <h2>البرمجة الآمنة</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>مبادئ Secure Coding</h3>
+      <p class="muted">التحقق من المدخلات، تقليل الصلاحيات، التحديث المستمر.</p>
+    </div>
+    <div class="card">
+      <h3>لغات</h3>
+      <p class="muted">Python – JavaScript – Web Basics.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+  <p>المطور: <b>Russi</b></p>
+  <p>
+    Instagram: @wxl_services <br>
+    Telegram: wxl_e
+  </p>
+</footer>
+
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  html.dataset.theme = html.dataset.theme==="dark" ? "light" : "dark";
+}
+</script>
+
+</body>
+</html>
